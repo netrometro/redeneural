@@ -1,5 +1,5 @@
 # Rede Neural Simplificada
-Uma rede neural de estrutura simples para aprendizado.
+Uma rede neural de estrutura simples para aprendizado escrita em Java.
 Este projeto foi baseado na explicação de Victor Dias que se encontra neste endereço:
 https://www.youtube.com/watch?v=NZlIYr1slAk
 
