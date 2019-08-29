@@ -1,4 +1,4 @@
-package br;
+package br.neuralnetwork;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -29,7 +29,6 @@ public class Neuron {
 	public long interaction(long[] inputs) {
 		this.inputs = inputs.clone();
 		this.results = new long[inputs.length];
-		long output = 0;
 		for (int i = 0; i < weights.length; i++) {
 			results[i] = inputs[i] * weights[i];
 			output += results[i];
