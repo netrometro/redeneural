@@ -1,5 +1,9 @@
 package br;
 
+import java.util.Arrays;
+
+import br.ecosystem.Ecosystem;
+import br.ecosystem.Race;
 import br.neuralnetwork.Layer;
 import br.neuralnetwork.NeuralNetwork;
 import br.neuralnetwork.Neuron;
@@ -7,9 +11,39 @@ import br.neuralnetwork.Neuron;
 public class Main {
 
 	public static void main(String[] args) {
-		int[] inputs = {-123, -23, 23};
 		
-		//*// Criando uma Rede Neural, copiando uma Rede Neural e mutando.
+		//*// O ecosistemas é uma corrida de 0 a 100 unidades com dois pilotos
+		int[] structure = {4,3};
+		NeuralNetwork piloto1 = new NeuralNetwork(structure);
+		NeuralNetwork piloto2 = new NeuralNetwork(structure);
+		
+		Ecosystem F1 = Race.buildEcosystem(2);
+		int[] output1 = new int[5];
+		int[] output2 = new int[5];
+		
+		boolean flag = true;
+		while (flag) {
+			output1 = F1.interaction(piloto1.interaction(output1));
+			output2 = F1.interaction(piloto2.interaction(output2));
+
+			System.out.println("Race [ " + Arrays.toString(output1) + " ]");
+			System.out.println("Race [ " + Arrays.toString(output2) + " ]");
+			System.out.println();
+			
+			int[] winner = F1.test();
+			for (int i = 0; i < winner.length; i++) {
+				if (winner[i] > 0) flag = false;
+			}
+		}
+		piloto1.log();
+		piloto2.log();
+		
+		
+		//*/
+		
+		//int[] inputs = {-123, -23, 23};
+		
+		/*// Criando uma Rede Neural, copiando uma Rede Neural e mutando.
 		int[] structure = {4,3};
 		NeuralNetwork nn1 = new NeuralNetwork(structure);
 		nn1.interaction(inputs);
