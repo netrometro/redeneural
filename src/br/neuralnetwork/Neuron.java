@@ -5,17 +5,14 @@ import java.util.Random;
 
 public class Neuron {
 	
-	private long[] weights;
-	private long[] inputs;
-	private long[] results;
-	private long output;
+	private int[] weights;
+	private int[] inputs;
+	private int[] results;
+	private int output;
 	
-	public Neuron(int amoutOfInputs) {
-		weights = new long[amoutOfInputs];
-		this.mutation();
-	}
-
-	public Neuron(long[] weights) {
+	public Neuron() { }
+	
+	public Neuron(int[] weights) {
 		this.weights = weights.clone();
 	}
 	
@@ -26,9 +23,13 @@ public class Neuron {
 		}
 	}
 	
-	public long interaction(long[] inputs) {
+	public int interaction(int[] inputs) {
+		if (weights == null) {
+			weights = new int[inputs.length];
+			this.mutation();
+		}
 		this.inputs = inputs.clone();
-		this.results = new long[inputs.length];
+		this.results = new int[inputs.length];
 		for (int i = 0; i < weights.length; i++) {
 			results[i] = inputs[i] * weights[i];
 			output += results[i];
@@ -38,7 +39,7 @@ public class Neuron {
 		return output;
 	}
 	
-	public long[] getDNA() {
+	public int[] getDNA() {
 		return weights.clone();
 	}
 	
