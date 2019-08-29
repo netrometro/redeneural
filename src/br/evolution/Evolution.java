@@ -23,7 +23,7 @@ public class Evolution {
 	}
 	
 	public int[][][] generate(int generations, int[] output) {
-		int[][][] dna = null;
+		NeuralNetwork winner = null;
 		
 		for (int i = 0; i < generations; i++) {
 			
@@ -32,13 +32,14 @@ public class Evolution {
 				outputs[o] = output.clone();
 			}
 			
-			System.out.println("Generation: " + (i+1) + " ###################################################");
+			System.out.println("Generation: " + (i+1) + " ################################################################################");
 			ecosystem = ecosystem.getInstance(population.length);
 			
-			int round = 1;
+			int round = 0;
 			race:
 			while (true) {
 				//System.out.println("Round " + round++);
+				round++;
 				for (int j = 0; j < population.length; j++) {
 					//System.out.println("Race before [ " + Arrays.toString(outputs[j]) + " ]");
 					outputs[j] = ecosystem.interaction(population[j].interaction(outputs[j]));
@@ -48,15 +49,21 @@ public class Evolution {
 					//System.out.println("Test [ " + Arrays.toString(win) + " ]\n");
 					for (int k = 0; k < win.length; k++) {
 						if (win[k] > 0) {
-							dna = population[k].getDNA();
-							System.out.println("Winner: " + k + " DNA: " + Arrays.deepToString(dna));
+							winner = population[k];
+							System.out.println("Winner: " + k + " Round: " + round + " DNA: " + Arrays.deepToString(winner.getDNA()));
 							break race;
 						}
 					}
 				}
 			}
+			
+			for (int j = 0; j < outputs.length; j++) {
+				population[j] = new NeuralNetwork(winner.getDNA());
+				population[j].mutation(0.5f); // Até 50% de mutação
+			}
+			population[0] = winner;
 		}
 		
-		return dna;
+		return winner.getDNA();
 	}
 }
