@@ -6,8 +6,8 @@ public class Layer {
 	
 	private Neuron[] neurons;
 	
-	public Layer(int amountOfNeuron, int amoutOfInputs) {
-		neurons = new Neuron[amountOfNeuron];
+	public Layer(int amountOfNeurons, int amoutOfInputs) {
+		neurons = new Neuron[amountOfNeurons];
 		for (int i = 0; i < neurons.length; i++) 
 			neurons[i] = new Neuron(amoutOfInputs);
 	}
@@ -18,9 +18,11 @@ public class Layer {
 			neurons[i] = new Neuron(dna[i]);
 	}
 	
-	public void mutation() {
+	public void mutation(int force) {
 		Random r = new Random();
-		neurons[r.nextInt(neurons.length)].mutation();
+		for (int i = 0; i < force; i++) {
+			neurons[r.nextInt(neurons.length)].mutation();
+		}
 	}
 	
 	public long[] interaction(long[] inputs) {

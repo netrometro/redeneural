@@ -18,7 +18,7 @@ public class Main {
 		l2.interaction(inputs);
 		l2.logNeuron();
 		
-		l2.mutation();
+		l2.mutation(2);
 		l2.interaction(inputs);
 		l2.logNeuron();
 		//*/
