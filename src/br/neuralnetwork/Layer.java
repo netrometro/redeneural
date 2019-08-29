@@ -48,7 +48,7 @@ public class Layer {
 			neurons[i].logInputs();
 			neurons[i].logResults();
 			neurons[i].logOutput();
-			System.out.println("----------------------------------------------------\n");
+			System.out.println("----------------------------------------------------");
 		}
 	}
 }

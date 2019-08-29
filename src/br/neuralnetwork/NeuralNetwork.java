@@ -45,6 +45,5 @@ public class NeuralNetwork {
 		for (int i = 0; i < layers.length; i++) {
 			layers[i].logNeuron();
 		}
-		System.out.println();
 	}
 }

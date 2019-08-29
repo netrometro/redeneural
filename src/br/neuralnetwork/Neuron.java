@@ -30,6 +30,7 @@ public class Neuron {
 		}
 		this.inputs = inputs.clone();
 		this.results = new int[inputs.length];
+		this.output = 0;
 		for (int i = 0; i < weights.length; i++) {
 			results[i] = inputs[i] * weights[i];
 			output += results[i];

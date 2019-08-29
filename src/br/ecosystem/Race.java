@@ -9,8 +9,8 @@ public class Race implements Ecosystem {
 	public Race(int amountOfPlayers) {
 		this.track = new int[amountOfPlayers];
 	}
-	
-	public static Ecosystem buildEcosystem(int players) {
+
+	public Ecosystem getInstance(int players) {
 		return new Race(players);
 	}
 

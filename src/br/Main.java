@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import br.ecosystem.Ecosystem;
 import br.ecosystem.Race;
+import br.evolution.Evolution;
 import br.neuralnetwork.Layer;
 import br.neuralnetwork.NeuralNetwork;
 import br.neuralnetwork.Neuron;
@@ -12,12 +13,26 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//*// O ecosistemas é uma corrida de 0 a 100 unidades com dois pilotos
+		//*// Evolução: Utiliza o ecosistema para selecionar o mais forte, reproduz ele, seleciona novamente e assim por diante por um número determinado de gerações
+		int[] structure = {4,3};
+		int population = 10;
+		Ecosystem ecosystem = new Race(population);
+		
+		Evolution evo = new Evolution(population, structure, ecosystem);
+		int[] output = new int[5];
+		int[][][] dna = evo.generate(10, output);
+		
+		System.out.println("Winner [ " +  Arrays.toString(dna) + " ]");
+		//*/
+		
+		
+		
+		/*// O ecosistemas é uma corrida de 0 a 100 unidades com dois pilotos
 		int[] structure = {4,3};
 		NeuralNetwork piloto1 = new NeuralNetwork(structure);
 		NeuralNetwork piloto2 = new NeuralNetwork(structure);
 		
-		Ecosystem F1 = Race.buildEcosystem(2);
+		Ecosystem F1 = Race.getInstance(2);
 		int[] output1 = new int[5];
 		int[] output2 = new int[5];
 		
