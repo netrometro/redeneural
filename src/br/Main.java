@@ -15,14 +15,14 @@ public class Main {
 		
 		//*// Evolução: Utiliza o ecosistema para selecionar o mais forte, reproduz ele, seleciona novamente e assim por diante por um número determinado de gerações
 		int[] structure = {4,3};
-		int population = 10;
+		int population = 1000;
 		Ecosystem ecosystem = new Race(population);
 		
 		Evolution evo = new Evolution(population, structure, ecosystem);
 		int[] output = new int[5];
-		int[][][] dna = evo.generate(10, output);
+		int[][][] dna = evo.generate(10000, output);
 		
-		System.out.println("Winner [ " +  Arrays.toString(dna) + " ]");
+		System.out.println("Winner final [ " +  Arrays.deepToString(dna) + " ]");
 		//*/
 		
 		

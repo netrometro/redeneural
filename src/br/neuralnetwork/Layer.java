@@ -18,9 +18,10 @@ public class Layer {
 			neurons[i] = new Neuron(dna[i]);
 	}
 	
-	public void mutation(int force) {
+	// Force vai de 0.0 até 1.0 ( 1.0 igual a todos)
+	public void mutation(float force) {
 		Random r = new Random();
-		for (int i = 0; i < neurons.length / force; i++) {
+		for (int i = 0; i < neurons.length * force; i++) {
 			neurons[r.nextInt(neurons.length)].mutation();
 		}
 	}

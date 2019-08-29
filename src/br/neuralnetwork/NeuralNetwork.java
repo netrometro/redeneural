@@ -18,7 +18,7 @@ public class NeuralNetwork {
 		}
 	}
 	
-	public void mutation(int force) {
+	public void mutation(float force) {
 		for (int i = 0; i < layers.length; i++) {
 			layers[i].mutation(force);
 		}
