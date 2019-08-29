@@ -20,7 +20,13 @@ public class Main {
 		n2.logInputs();
 		n2.logResults();
 		n2.logOutput();
-		//*/
 		
+		n2.mutation();
+		n2.interaction(inputs);
+		n2.logWeights();
+		n2.logInputs();
+		n2.logResults();
+		n2.logOutput();
+		//*/
 	}
 }

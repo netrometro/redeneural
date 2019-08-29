@@ -11,15 +11,19 @@ public class Neuron {
 	private long output;
 	
 	public Neuron(int amoutOfInputs) {
-		Random r = new Random();
 		weights = new long[amoutOfInputs];
-		for (int i = 0; i < weights.length; i++) {
-			weights[i] = r.nextInt(2001)-1000;
-		}
+		this.mutation();
 	}
 
 	public Neuron(long[] weights) {
 		this.weights = weights.clone();
+	}
+	
+	public void mutation() {
+		Random r = new Random();
+		for (int i = 0; i < weights.length; i++) {
+			weights[i] = r.nextInt(2001)-1000;
+		}
 	}
 	
 	public long interaction(long[] inputs) {
