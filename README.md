@@ -21,3 +21,9 @@ https://www.youtube.com/watch?v=NZlIYr1slAk
 - É esperado que a RN aprenda em cada seguimento da pista, qual dos valores A, B e C é melhor;
 - Durante os testes a RN aprendeu na 16 geração a melhor maneira de se pilotar nesta pista.
 
+## Segundo ecosistema
+
+- O segundo ecosistema consiste no jogo Super Senha, em que, através de pistas e sugestões um jogador tenta decifrar uma senha.
+- Ainda não está pronto e funcional. A estrutura do novo jogo é diferente porque apenas um jogador joga contra o sistema (a senha).
+- Escolher quais serão os inputs é o mais difícil, coloquei o tabuleiro todo mas a rede neural não consegue entender as relações entre elas. Precisa simplificar muito para diminuir os inputs e facilitar a vida da rede neural.
+- Sem tempo no momento para isto.
