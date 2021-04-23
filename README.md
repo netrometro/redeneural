@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=NZlIYr1slAk
 
 ## Linguagem
 
-- Foi utilizado Java puro sem nenhuma biblioteca esterna.
+- Foi utilizado Java puro sem nenhuma biblioteca externa.
 
 ## Ecosistema
 
